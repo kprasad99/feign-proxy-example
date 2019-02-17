@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    data:
+    - "classpath:sql/h2-employee.sql"
+  jpa:
+    show-sql: true

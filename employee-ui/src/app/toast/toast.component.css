@@ -1,0 +1,11 @@
+
+
+.toast-header {
+    display: inline-flex;
+    padding: 0px 0px 8px 0px; 
+    width : 100%;
+    font-size: 1.1rem; 
+    font-weight: 400;
+    vertical-align: middle;
+    border-bottom: 1px solid white;
+}
