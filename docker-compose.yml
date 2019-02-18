@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  employee-ui:
+    image: employee-ui
+    build: ./employee-feign-proxy
+    ports:
+      - 8444:8443
+    networks: 
+      - feign-network
+    environment: 
+      - emp.server=http://employee-server:8080
+      - emp.ui.path=file:/opt/ui/
+  employee-server:
+    image: employee-server
+    build: ./employee-service
+    ports:
+      - 8080
+    networks: 
+      - feign-network
+networks: 
+  feign-network:

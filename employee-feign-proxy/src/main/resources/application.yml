@@ -1,2 +1,11 @@
 server:
-  port: 8181
+  port: 8443
+  http2:
+    enabled: true
+  ssl:
+    key-store: classpath:jks/keystore.p12
+    key-store-password: secret
+    key-alias: tomcat
+    key-store-type: PKCS12
+emp:
+  server: "https://localhost:8443"
