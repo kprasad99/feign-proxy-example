@@ -1,4 +1,9 @@
 FROM openjdk:11.0.1-jre-slim-stretch
+#FROM openjdk:8-jre-alpine
+
+
+ENV spring.webflux.static-path-pattern=/**
+ENV spring.resources.static-locations=/static 
 
 VOLUME /tmp
 ARG DEPENDENCY=target/dependency
@@ -8,7 +13,7 @@ COPY ${DEPENDENCY}/BOOT-INF/classes /app
 ENTRYPOINT ["java","-cp","app:app/lib/*","io.github.kprasad99.feign.webflux.EmployeeFeignProxyApplication"]
 
 
-COPY ./target/ui/ /opt/ui
+COPY ./target/ui/ /static
 
 # alterntively instead of above
 # ARG JAR_FILE

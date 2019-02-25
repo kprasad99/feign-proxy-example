@@ -7,5 +7,11 @@ server:
     key-store-password: secret
     key-alias: tomcat
     key-store-type: PKCS12
+spring:
+  resources:
+    cache:
+      cachecontrol:
+        max-age: 36000
+        cache-public: true
 emp:
   server: "https://localhost:8443"

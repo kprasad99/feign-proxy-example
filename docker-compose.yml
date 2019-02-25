@@ -9,8 +9,9 @@ services:
     networks: 
       - feign-network
     environment: 
+      - spring.webflux.static-path-pattern=/**
+      - spring.resources.static-locations=/static
       - emp.server=http://employee-server:8080
-      - emp.ui.path=file:/opt/ui/
   employee-server:
     image: employee-server
     build: ./employee-service
