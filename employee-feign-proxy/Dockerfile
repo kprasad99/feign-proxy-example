@@ -2,8 +2,9 @@ FROM openjdk:11.0.1-jre-slim-stretch
 #FROM openjdk:8-jre-alpine
 
 
-ENV spring.webflux.static-path-pattern=/**
-ENV spring.resources.static-locations=/static 
+#ENV spring.webflux.static-path-pattern=/**
+#ENV spring.resources.static-locations=/static
+ENV docker.instance=true
 
 VOLUME /tmp
 ARG DEPENDENCY=target/dependency
