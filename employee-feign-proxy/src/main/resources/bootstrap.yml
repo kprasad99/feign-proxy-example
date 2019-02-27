@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: employee-proxy
+  cloud:
+    zookeeper:
+      discovery:
+        enabled: true
+      default-health-endpoint: /actuator/health
+      dependency:
+        resttemplate:
+          enabled: false
+      dependencies:
+        empProxy:
+          path: /employee-service
+          load-balancer-type: ROUND_ROBIN

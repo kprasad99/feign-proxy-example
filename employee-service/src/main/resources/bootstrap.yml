@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: employee-service
+  cloud:
+    zookeeper:
+      discovery:
+        enabled: true
+#        zone: Zone1 

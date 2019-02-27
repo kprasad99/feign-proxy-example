@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import io.github.kprasad99.feign.webflux.domain.Employee;
 
-@FeignClient(value = "empProxy", path = "/v1/employee", url = "${emp.server}")
+@FeignClient(value = "empProxy", path = "/v1/employee")
 public interface EmployeeProxy {
 
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
